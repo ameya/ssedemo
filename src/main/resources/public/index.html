@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Workflow Engin</title>
+    <script>
+
+	function initialize() {
+		const eventSource = new EventSource('/api/v1/sse/subscription');
+
+		eventSource.onmessage = e => {
+			const msg = e.data;
+
+			Notification.requestPermission(function() {
+				if (Notification.permission === 'granted') {
+					// user approved.
+					var text = msg;
+					var notification = new Notification('Notification Alert!', { body: text });
+					setTimeout(notification.close(), 5 * 1000) // close in 5 sec
+				} else if (Notification.permission === 'denied') {
+					// user denied.
+				} else { // Notification.permission === 'default'
+					// user didn’t make a decision.
+					// You can’t send notifications until they grant permission.
+				}
+			});
+
+			document.getElementById("notify").innerHTML = msg;
+		};
+		eventSource.onopen = e => console.log('open');
+		eventSource.onerror = e => {
+			if (e.readyState == EventSource.CLOSED) {
+				console.log('close');
+			}
+			else {
+				console.log(e);
+			}
+		};
+		eventSource.addEventListener('second', function(e) {
+			console.log('second', e.data);
+		}, false);
+	}
+	window.onload = initialize;
+
+
+    </script>
+</head>
+<body>
+<div id="notify" style="border:1px solid #000;width:500px;height:30px;margin:10px;"></div>
+</body>
+
+</html>
