@@ -1,6 +1,8 @@
 # ssedemo
 SSE Demo project using Spring Boot and Web APIs Notification
 
+Git check out the applicaiton. Run the applicaiton, then fire the below URLs
+
 http://localhost:8080/
 
 will show the html page that has js to register to event source.
