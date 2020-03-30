@@ -5,11 +5,11 @@ Git check out the applicaiton. Run the applicaiton, then fire the below URLs
 
 http://localhost:8080/
 
-will show the html page that has js to register to event source.
+Will show the html page that has js to register to event source.
 
-http://localhost:8080/api/v1/sse/producer/test/<<Any text data>>
+http://localhost:8080/api/v1/sse/producer/test/[[Any text data]]
 
-send testing data sample below.
+Send testing data, [[]] is the placeholder for any data, sample below. 
 
 http://localhost:8081/api/v1/sse/producer/test/test%20my%20data2
 
