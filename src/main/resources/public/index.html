@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Workflow Engin</title>
+    <title>SSE Demo</title>
     <script>
 
 	function initialize() {
@@ -27,7 +27,7 @@
 		};
 		eventSource.onopen = e => console.log('open');
 		eventSource.onerror = e => {
-			if (e.readyState == EventSource.CLOSED) {
+			if (e.readyState === EventSource.CLOSED) {
 				console.log('close');
 			}
 			else {
