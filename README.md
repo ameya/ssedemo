@@ -3,15 +3,15 @@ SSE Demo project using Spring Boot and Web APIs Notification
 
 Git check out the applicaiton. Run the applicaiton, then fire the below URLs
 
-http://localhost:8080/
+http://localhost:8080/index.html
 
 Will show the html page that has js to register to event source.
 
-http://localhost:8080/api/v1/sse/producer/test/[[Any text data]]
-
-Send testing data, [[]] is the placeholder for any data, sample below. 
+In a new tab/window open the following URL
 
 http://localhost:8081/api/v1/sse/producer/test/test%20my%20data2
+
+This will send "test my data2" to the JS page.
 
 # Getting Started
 
